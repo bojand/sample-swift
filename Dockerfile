@@ -1,9 +1,9 @@
-FROM swift:latest as builder
+FROM swift:focal as builder
 WORKDIR /root
 COPY . .
 RUN swift build -c release
 
-FROM swift:slim
+FROM swift:focal-slim
 WORKDIR /root
 COPY --from=builder /root .
 CMD [".build/release/SampleSwift"]
