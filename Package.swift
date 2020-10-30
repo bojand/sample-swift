@@ -10,7 +10,9 @@ let package = Package(
     targets: [
         .target(
             name: "SampleSwift",
-            dependencies: ["vapor"],
+            dependencies: [
+                .product(name: "Vapor", package: "vapor")
+            ],
             path: "./Sources")
     ]
 )
